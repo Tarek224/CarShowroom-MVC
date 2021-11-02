@@ -1,0 +1,144 @@
+﻿@using CarShowroom.Models
+@model List<WishList>
+
+@{
+    ViewBag.Title = "Your WishList";
+}
+
+<!-- breadcrumb -->
+<div class="container">
+    <div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+        <a href="index.html" class="stext-109 cl8 hov-cl1 trans-04">
+            Home
+            <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+        </a>
+
+        <span class="stext-109 cl4">
+            Your WishList
+        </span>
+    </div>
+</div>
+
+
+<!-- Shoping Cart -->
+<div class="bg0 p-t-75 p-b-85">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
+                <div class="m-l-25 m-r--38 m-lr-0-xl">
+                    <div class="wrap-table-shopping-cart">
+                        <table class="table-shopping-cart">
+                            <tr class="table_head">
+                                <th class="column-1">Product</th>
+                                <th class="column-2 p-l-10 p-r-10"></th>
+                                <th class="column-5">Price</th>
+                                <th class="column-4"></th>
+                                <th class="column-5"></th>
+                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="table_row">
+                                    <td class="column-1">
+                                        <a href="/Cars/RemoveFav/@item.ID">
+                                            <div class="how-itemcart1">
+                                                <img src="~/Content/images/@item.Car.CarImages[0].Image" alt="IMG" width="60" height="80">
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td class="column-2 p-l-10 p-r-10"><a style="color:#555" href="/Cars/Details/@item.Car_ID">@item.Car.Name</a></td>
+
+                                    <td class="column-5">$@item.Car.Price</td>
+
+                                    <td class="column-5" colspan="2">
+                                        <a href="/Cars/Details/@item.Car_ID" class="stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10 p-t-10 p-b-10">
+                                            View Details
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-10 col-lg-7 col-xl-5 m-lr-auto m-b-50">
+                <div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm">
+                    <h4 class="mtext-109 cl2 p-b-30">
+                        #COZASTORE
+                    </h4>
+
+                    <div class="sidebar-gallery w-full p-tb-30">
+
+                        <div class="flex-w flex-sb p-t-36 gallery-lb">
+                            <!-- item gallery sidebar -->
+                            <div class="wrap-item-gallery m-b-10">
+                                <a class="item-gallery bg-img1" href="~/Content/images/BMW1.jpg" data-lightbox="gallery"
+                                   style="background-image: url('/Content/images/BMW1.jpg');"></a>
+                            </div>
+
+                            <!-- item gallery sidebar -->
+                            <div class="wrap-item-gallery m-b-10">
+                                <a class="item-gallery bg-img1" href="~/Content/images/BMW2.jpg" data-lightbox="gallery"
+                                   style="background-image: url('/Content/images/BMW2.jpg');"></a>
+                            </div>
+
+                            <!-- item gallery sidebar -->
+                            <div class="wrap-item-gallery m-b-10">
+                                <a class="item-gallery bg-img1" href="~/Content/images/BMW3.jpg" data-lightbox="gallery"
+                                   style="background-image: url('/Content/images/BMW2.jpg');"></a>
+                            </div>
+
+                            <!-- item gallery sidebar -->
+                            <div class="wrap-item-gallery m-b-10">
+                                <a class="item-gallery bg-img1" href="~/Content/images/BMW5.jpg" data-lightbox="gallery"
+                                   style="background-image: url('/Content/images/BMW5.jpg');"></a>
+                            </div>
+
+                            <!-- item gallery sidebar -->
+                            <div class="wrap-item-gallery m-b-10">
+                                <a class="item-gallery bg-img1" href="~/Content/images/BMW6.jpg" data-lightbox="gallery"
+                                   style="background-image: url('/Content/images/BMW6.jpg');"></a>
+                            </div>
+
+                            <!-- item gallery sidebar -->
+                            <div class="wrap-item-gallery m-b-10">
+                                <a class="item-gallery bg-img1" href="~/Content/images/Marcedes1.jpg" data-lightbox="gallery"
+                                   style="background-image: url('/Content/images/Marcedes1.jpg');"></a>
+                            </div>
+
+                            <!-- item gallery sidebar -->
+                            <div class="wrap-item-gallery m-b-10">
+                                <a class="item-gallery bg-img1" href="~/Content/images/Marcedes2.jpg" data-lightbox="gallery"
+                                   style="background-image: url('/Content/images/Marcedes2.jpg');"></a>
+                            </div>
+
+                            <!-- item gallery sidebar -->
+                            <div class="wrap-item-gallery m-b-10">
+                                <a class="item-gallery bg-img1" href="~/Content/images/Marcedes3.jpg" data-lightbox="gallery"
+                                   style="background-image: url('/Content/images/Marcedes3.jpg');"></a>
+                            </div>
+
+                            <!-- item gallery sidebar -->
+                            <div class="wrap-item-gallery m-b-10">
+                                <a class="item-gallery bg-img1" href="~/Content/images/Marcedes4.jpg" data-lightbox="gallery"
+                                   style="background-image: url('/Content/images/Marcedes4.jpg');"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-gallery w-full">
+                        <span class="mtext-101 cl5">
+                            About Us
+                        </span>
+
+                        <p class="stext-108 cl6 p-t-27">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur maximus vulputate hendrerit. Praesent faucibus erat vitae rutrum gravida. Vestibulum tempus mi enim, in molestie sem fermentum quis.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

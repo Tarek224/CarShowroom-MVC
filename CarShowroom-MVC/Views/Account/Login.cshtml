@@ -1,0 +1,38 @@
+﻿@using CarShowroom.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+    
+}
+<div class="container">
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "login-form" }))
+    {
+        <div class="login-wrap">
+            <p class="login-img"><i class="icon_lock_alt"></i></p>
+            @Html.ValidationSummary(true, "", new { @class="text-danger"})
+            @Html.AntiForgeryToken()
+            <div class="input-group">
+                <span class="input-group-addon"><i class="icon_profile"></i></span>
+                @Html.TextBoxFor(e => e.Email, new { @class="form-control", placeholder="Username"} )
+                @Html.ValidationMessageFor(e => e.Email,"",new { @class = "text-danger"})
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+                @Html.TextBoxFor(p => p.Password, new { @class = "form-control", placeholder = "Password" })
+                @Html.ValidationMessageFor(p => p.Password, "", new { @class = "text-danger" })
+            </div>
+            <label class="checkbox">
+                @Html.EditorFor(r => r.RememberMe) 
+                @Html.DisplayNameFor(m => m.RememberMe)
+            </label>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+            <a href="/Account/Register" class="btn btn-info btn-lg btn-block">Signup</a>
+        </div>
+    }
+   
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
